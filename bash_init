@@ -1,0 +1,16 @@
+export PATH="$PATH:/bin:/usr/bin:/usr/local/bin:~/bin:~/.local/bin"
+PROYECT=${PWD##*/}
+PATH_LOCAL=${PWD}
+
+if [ ! -f ~/.bucket ]; then
+  echo "Please write your team:"
+  read TEAM
+  setTeam $TEAM
+else
+  read -r TEAM < ~/.bucket
+  echo "Team: $TEAM"
+fi
+
+PATH_S3="s3://"${TEAM}"/files_project/"${PROYECT}"/files"
+PATH_MNT="/mnt/"${TEAM}"/files_project/"${PROYECT}"/files"
+PATH_LOCAL=${PATH_LOCAL}"/files"

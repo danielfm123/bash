@@ -1,0 +1,10 @@
+#!/bin/bash
+source bash_init
+
+mkdir $1
+git clone --bare https://github.com/metricarts/datascience_template
+cd datascience_template
+git push --mirror https://github.com/exampleuser/$1.git
+cd ..
+rm -rf datascience_template
+cd $1

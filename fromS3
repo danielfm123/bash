@@ -1,0 +1,7 @@
+#!/bin/bash
+source bash_init
+  
+CMD="aws s3 sync "$PATH_S3" "$PATH_LOCAL" "$@
+echo $CMD
+$CMD
+

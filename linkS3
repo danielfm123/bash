@@ -1,0 +1,6 @@
+#!/bin/bash
+source bash_init
+  
+CMD="ln -sf "$PATH_MNT" "$PATH_LOCAL" "
+echo $CMD
+$CMD

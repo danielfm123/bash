@@ -1,0 +1,10 @@
+#!/bin/bash
+source bash_init
+if [ $1 ]
+then
+    echo $1 > ~/.bucket
+    echo "team "$1" configured"
+else
+    echo "use as setTeam teamname"
+fi
+
